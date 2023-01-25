@@ -53,9 +53,10 @@ vim.keymap.set("n", "Q", "<nop>")
 --replace word you are on
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
+-- Plugin keymaps
+-- NvimTree
+keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 
-
-
-
+--Telescope is in the telescope plugin folder
 
 

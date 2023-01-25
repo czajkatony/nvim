@@ -1,3 +1,5 @@
+-- ******** if auto load isn't working do ':PackerSync' **************
+
 local ensure_packer = function()
   local fn = vim.fn
   local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
@@ -10,7 +12,6 @@ local ensure_packer = function()
 end
 local packer_bootstrap = ensure_packer() -- true if packer was just installed
 
---Autocommand that reloads nvim whenever you save this file
 vim.cmd([[
   augroup packer_user_config
     autocmd!
@@ -18,6 +19,9 @@ vim.cmd([[
   augroup end
 ]])
 
+
+
+--Autocommand that reloads nvim whenever you save this file
 local status, packer = pcall(require, "packer")
 if not status then
     return
@@ -27,7 +31,19 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   -- My plugins here
   use {"ellisonleao/gruvbox.nvim"}
-
+  use 'tpope/vim-surround'
+  use 'vim-scripts/ReplaceWithRegister'
+  use 'numToStr/Comment.nvim'
+  -- file explorer
+  use 'nvim-tree/nvim-tree.lua'
+  use 'kyazdani42/nvim-web-devicons'
+  use 'nvim-lualine/lualine.nvim'
+  -- fuzzy finding w/ telescope
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.1',
+    -- or                            , branch = '0.1.x',
+     requires = { {'nvim-lua/plenary.nvim'} }
+      }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
@@ -35,3 +51,16 @@ return require('packer').startup(function(use)
     require('packer').sync()
   end
 end)
+
+
+
+
+
+
+
+
+
+
+
+
+
