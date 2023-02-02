@@ -18,6 +18,8 @@ keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
 keymap.set("n", "<leader>tn", ":tabn<CR>") --  go to next tab
 keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tabeymap.set()
 
+keymap.set("n", "<leader>wh", "<C-w>h")
+keymap.set("n", "<leader>wl", "<C-w>l")
 --Primeagen keymaps--
 
 --move while highlighted commands
